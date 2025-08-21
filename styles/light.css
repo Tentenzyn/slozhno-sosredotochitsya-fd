@@ -24,10 +24,10 @@
   --text-shadow: 2px 2px 0 var(--accent-color);
 }
 
- .theme-light .header__rec,
+.theme-light .header__rec,
 .theme-light .header__rec::after {
-    display: none;
-  }
+  display: none;
+}
 
 @media (prefers-color-scheme: light) {
   :root {
