@@ -1,12 +1,27 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --pink: #f1b2ce;
+  --violet: #db00ff;
+  --fuchsia: #ff0070;
+  --light-pink: #fff1f7;
+  --dark-blue: #000028;
+  --menu-hover-color: rgb(255 0 112 / 0.4);
+  --accent-color: var(--fuchsia);
+
+  --font-family: "IBM Plex Mono";
+  --font-weight: 400;
+  --font-weight-bold: 700;
+  --font-size: 18px;
+  --line-height: 23.4px;
+  --bg-image: url("../images/cover-image-dark.png");
+  --bg-color: var(--dark-blue);
+  --button-txt-color: var(--accent-color);
+  --menu-focus-color: var(--accent-color);
+  --border: 1px solid var(--accent-color);
+  --label-color: var(--accent-color);
+  --title-color: var(--violet);
+  --card-text-color: var(--pink);
+  --title-decor-txt-color: var(--dark-blue);
+  --title-decor-bg-color: var(--accent-color);
+  --main-title-color: var(--accent-color);
+  --text-shadow: 2px 2px 0 var(--accent-color);
 }

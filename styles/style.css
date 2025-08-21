@@ -1,5 +1,414 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+  font-family: var(--font-family) sans-serif;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+.header {
+  height: 100vh;
+  min-height: 668px;
+  font: inherit;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr minmax(min-content, max-content) 1fr;
+  padding: var(--gap);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: "";
+  right: var(--gap);
+  top: var(--gap);
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: var(--border);
+  border-right: var(--border);
+}
+
+.decorated-zone::after {
+  content: "";
+  left: var(--gap);
+  bottom: var(--gap);
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-bottom: var(--border);
+  border-left: var(--border);
+}
+
+.header__rec {
+  position: absolute;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  top: calc(var(--gap) + 2px);
+  right: calc(var(--gap) + 28px);
+  color: var(--label-color);
+}
+
+.header__rec::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -18px;
+  inline-size: 10px;
+  block-size: 10px;
+  border-radius: 50%;
+  background: var(--label-color);
+  box-shadow: 0 0 4px 2px var(--label-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-items: start;
+  margin-block-start: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  display: block;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: var(--button-txt-color);
+  text-transform: lowercase;
+  line-height: 100%;
+  cursor: pointer;
+  padding: 2px 13px 4px;
+  appearance: none;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  box-shadow: 0 1px 0 0 var(--menu-focus-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--menu-hover-color);
+}
+
+.header__theme-menu-button_active {
+  border: var(--border);
+  pointer-events: none;
+}
+
+.logo {
+  justify-self: start;
+  font-size: var(--logo-size);
+  line-height: 83%;
+  font-weight: var(--font-weight-bold);
+  color: var(--title-color);
+  font-family: var(--font-family);
+}
+
+.text-shadow {
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  display: grid;
+  align-items: center;
+  color: var(--description-text-color);
+  line-height: 130%;
+  font-weight: var(--font-weight-bold);
+}
+
+.title-decor {
+  display: block;
+  color: var(--title-decor-txt-color);
+  background-color: var(--title-decor-bg-color);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+.content {
+  padding: 40px var(--gap);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.main-title {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  color: var(--main-title-color);
+  font-weight: var(--font-weight-bold);
+}
+
+.card-title {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+.no-bold {
+  font-weight: var(--font-weight);
+}
+
+.card-text {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+  color: var(--card-text-color);
+}
+
+.link {
+  text-shadow: var(--text-shadow);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--pink);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--pink);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+  margin-block-start: var(--gap);
+}
+
+.image-grid {
+  display: block;
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  height: 100vh;
+  min-height: 668px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-shadow-light {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+footer .decorated-zone::before {
+  content: "";
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-top: var(--border);
+  border-right: var(--border);
+}
+
+footer .decorated-zone::after {
+  content: "";
+  left: 10px;
+  bottom: 10px;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-bottom: var(--border);
+  border-left: var(--border);
+}
+
+@media (min-width: 768px) {
+  .header {
+    min-height: 1024px;
+  }
+
+  .header__theme-menu {
+    margin-block-start: 171px;
+  }
+
+  .header__text {
+    inline-size: 50%;
+    justify-self: end;
+  }
+
+  .content-section-what {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: min-content;
+    gap: var(--gap);
+  }
+
+  .main-title-what {
+    grid-column: 1;
+  }
+
+  .logo-shifted {
+    position: relative;
+    left: -20px;
+  }
+
+  .content {
+    padding: 60px var(--gap);
+    gap: 80px;
+  }
+
+  .card-what {
+    grid-column: 2;
+  }
+
+  .content-section-why {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "title . ."
+      "multitasking multitasking multitasking"
+      "food food food"
+      "gadgets gadgets gadgets";
+    gap: var(--gap);
+  }
+
+  .main-title-why {
+    grid-area: title;
+  }
+
+  .card-why:nth-child(2) {
+    grid-area: multitasking;
+  }
+  .card-why:nth-child(3) {
+    grid-area: food;
+  }
+  .card-why:nth-child(4) {
+    grid-area: gadgets;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape book ice-cream"
+      "tape street street"
+      "tape street street";
+  }
+
+  .image-grid {
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-grid:nth-child(1) {
+    grid-area: sunset;
+  }
+  .image-grid:nth-child(2) {
+    grid-area: ice-cream;
+  }
+
+  .image-grid:nth-child(3) {
+    grid-area: tape;
+  }
+
+  .image-grid:nth-child(4) {
+    grid-area: book;
+  }
+
+  .image-grid:nth-child(5) {
+    grid-area: street;
+  }
+
+  .footer {
+    min-height: 1024px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    min-height: 768px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-block-start: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__text {
+    inline-size: 50%;
+    justify-self: end;
+  }
+
+  .content-section-what {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--gap);
+  }
+
+  .main-title-what {
+    grid-column: 1;
+  }
+
+  .card-what {
+    grid-column: 2;
+  }
+
+  .card-title-what {
+    grid-column: 2;
+  }
+
+  .content-section-why {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "title . ."
+      "multitasking food gadgets";
+    gap: var(--gap);
+  }
+
+  .footer {
+    min-height: 768px;
+  }
 }
