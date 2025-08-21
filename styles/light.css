@@ -22,6 +22,7 @@
   --title-decor-bg-color: var(--accent-color);
   --main-title-color: var(--black);
   --text-shadow: 2px 2px 0 var(--accent-color);
+  --text-link: var(--black);
 }
 
 .theme-light .header__rec,
@@ -54,6 +55,7 @@
     --title-decor-bg-color: var(--accent-color);
     --main-title-color: var(--black);
     --text-shadow: 2px 2px 0 var(--accent-color);
+    --text-link: var(--black);
   }
 
   .theme-auto .header__rec,

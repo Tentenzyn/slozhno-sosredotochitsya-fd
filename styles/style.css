@@ -4,7 +4,7 @@
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--bg-color);
-  font-family: var(--font-family) sans-serif;
+  font-family: var(--font-family), sans-serif;
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
@@ -49,7 +49,7 @@
 
 .header__rec {
   position: absolute;
-  font-family: var(--font-family);
+  font-family: var(--font-family), sans-serif;
   text-transform: uppercase;
   top: calc(var(--gap) + 2px);
   right: calc(var(--gap) + 28px);
@@ -70,7 +70,6 @@
 
 .header__theme-menu {
   justify-self: end;
-  align-items: start;
   margin-block-start: 65px;
 }
 
@@ -84,7 +83,6 @@
 }
 
 .header__theme-menu-button {
-  display: block;
   border: 1px solid transparent;
   background-color: transparent;
   color: var(--button-txt-color);
@@ -93,8 +91,6 @@
   cursor: pointer;
   padding: 2px 13px 4px;
   appearance: none;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
 }
 
 .header__theme-menu-button:focus {
@@ -116,12 +112,9 @@
 }
 
 .logo {
-  justify-self: start;
   font-size: var(--logo-size);
   line-height: 83%;
-  font-weight: var(--font-weight-bold);
   color: var(--title-color);
-  font-family: var(--font-family);
 }
 
 .text-shadow {
@@ -131,16 +124,11 @@
 .header__text {
   display: grid;
   align-items: center;
-  color: var(--description-text-color);
-  line-height: 130%;
-  font-weight: var(--font-weight-bold);
 }
 
 .title-decor {
-  display: block;
   color: var(--title-decor-txt-color);
   background-color: var(--title-decor-bg-color);
-  font-family: var(--font-family);
   font-weight: var(--font-weight-bold);
 }
 
@@ -171,14 +159,11 @@
 
 .main-title {
   font-size: var(--font-size);
-  font-family: var(--font-family);
   color: var(--main-title-color);
-  font-weight: var(--font-weight-bold);
 }
 
 .card-title {
   font-size: var(--font-size);
-  font-family: var(--font-family);
 }
 
 .no-bold {
@@ -187,7 +172,6 @@
 
 .card-text {
   font-size: var(--font-size);
-  font-family: var(--font-family);
   color: var(--card-text-color);
 }
 
@@ -198,7 +182,7 @@
 
 .link:hover {
   text-decoration: underline;
-  color: var(--pink);
+  color: var(--text-link);
 }
 
 .link:focus {
@@ -206,7 +190,7 @@
 }
 
 .link:focus-visible {
-  outline: 1px solid var(--pink);
+  outline: 1px solid var(--text-link);
 }
 
 .gallery {
@@ -217,7 +201,6 @@
 }
 
 .image-grid {
-  display: block;
   block-size: 100%;
   inline-size: 100%;
   object-fit: cover;
@@ -376,36 +359,10 @@ footer .decorated-zone::after {
     flex-direction: row;
   }
 
-  .header__text {
-    inline-size: 50%;
-    justify-self: end;
-  }
-
-  .content-section-what {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--gap);
-  }
-
-  .main-title-what {
-    grid-column: 1;
-  }
-
-  .card-what {
-    grid-column: 2;
-  }
-
-  .card-title-what {
-    grid-column: 2;
-  }
-
   .content-section-why {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
       "title . ."
       "multitasking food gadgets";
-    gap: var(--gap);
   }
 
   .footer {

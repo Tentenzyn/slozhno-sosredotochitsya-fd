@@ -24,4 +24,5 @@
   --title-decor-bg-color: var(--accent-color);
   --main-title-color: var(--accent-color);
   --text-shadow: 2px 2px 0 var(--accent-color);
+  --text-link: var(--pink);
 }
