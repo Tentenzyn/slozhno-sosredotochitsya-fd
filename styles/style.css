@@ -4,10 +4,12 @@
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--bg-color);
-  font-family: var(--font-family), sans-serif;
+  font-family: var(--font-family), monospace;
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header {
@@ -49,7 +51,7 @@
 
 .header__rec {
   position: absolute;
-  font-family: var(--font-family), sans-serif;
+  font-family: var(--font-family), monospace;
   text-transform: uppercase;
   top: calc(var(--gap) + 2px);
   right: calc(var(--gap) + 28px);
@@ -145,7 +147,7 @@
   gap: 20px;
 }
 
-.cards {
+.cards-what {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -154,6 +156,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  align-self: start;
   gap: 10px;
 }
 
@@ -181,8 +184,7 @@
 }
 
 .link:hover {
-  text-decoration: underline;
-  color: var(--text-link);
+  box-shadow: 0 1px 0 0 var(--text-link);
 }
 
 .link:focus {
@@ -219,28 +221,6 @@
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
-footer .decorated-zone::before {
-  content: "";
-  right: 10px;
-  top: 10px;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-top: var(--border);
-  border-right: var(--border);
-}
-
-footer .decorated-zone::after {
-  content: "";
-  left: 10px;
-  bottom: 10px;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-bottom: var(--border);
-  border-left: var(--border);
-}
-
 @media (min-width: 768px) {
   .header {
     min-height: 1024px;
@@ -266,6 +246,13 @@ footer .decorated-zone::after {
     grid-column: 1;
   }
 
+  .main-title-why {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1;
+    gap: var(--gap);
+  }
+
   .logo-shifted {
     position: relative;
     left: -20px;
@@ -278,31 +265,6 @@ footer .decorated-zone::after {
 
   .card-what {
     grid-column: 2;
-  }
-
-  .content-section-why {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-      "title . ."
-      "multitasking multitasking multitasking"
-      "food food food"
-      "gadgets gadgets gadgets";
-    gap: var(--gap);
-  }
-
-  .main-title-why {
-    grid-area: title;
-  }
-
-  .card-why:nth-child(2) {
-    grid-area: multitasking;
-  }
-  .card-why:nth-child(3) {
-    grid-area: food;
-  }
-  .card-why:nth-child(4) {
-    grid-area: gadgets;
   }
 
   .gallery {
@@ -359,12 +321,21 @@ footer .decorated-zone::after {
     flex-direction: row;
   }
 
-  .content-section-why {
-    grid-template-areas:
-      "title . ."
-      "multitasking food gadgets";
+  .content-section-what {
+    grid-template-columns: 1fr 2.06fr;
   }
 
+  .content-section-why {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .main-title-why {
+    grid-template-columns: 1fr;
+    grid-column: 1 / -1;
+    max-width: 314px;
+  }
   .footer {
     min-height: 768px;
   }
